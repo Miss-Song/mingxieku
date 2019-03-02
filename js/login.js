@@ -38,8 +38,8 @@ $(function () {
                     location.href = "../html/login.html";
                 } else {
                     if (getCookie("username") != $username.val()) {
-                        setCookie("name", $username.val(), 7);
-                        setCookie("pw",$pw.val(),7);
+                        setCookie("name", $username.val(), 17);
+                        setCookie("pw",$pw.val(),17);
                     }
                     location.href = "../html/index.html";
                 }
