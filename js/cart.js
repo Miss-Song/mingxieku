@@ -45,7 +45,7 @@ $(function () {
                         var prevpri=$(this).parent().parent().find(".price").html();
                         var gq=$(this).parent().parent().find("#allprice");
                         if (a != 0) {
-                            $.get("http://47.104.244.134:8080/cartupdate.do", { "id": id, "gid": gid, "num": -1, "token": getCookie("token") },
+                            $.get("http://47.104.244.134:8080/cartupdate.do", { "id": id, "gid": gid, "num": -1, "token": parseInt(getCookie("token")) },
                                 function (data) {
                                     console.log(data);
                                     if (data["msg"] != "失败") {
@@ -71,7 +71,7 @@ $(function () {
                         var gid = $(this).parent().find(".ogid").html();
                         var prevpri=$(this).parent().parent().find(".price").html();
                         var gq=$(this).parent().parent().find("#allprice");
-                        $.get("http://47.104.244.134:8080/cartupdate.do", { "id": id, "gid": gid, "num": 1, "token": getCookie("token") },
+                        $.get("http://47.104.244.134:8080/cartupdate.do", { "id": id, "gid": gid, "num": 1, "token": parseInt(getCookie("token")) },
                             function (data) {
                                 console.log(data);
                                 if (data["msg"] != "失败") {
@@ -93,7 +93,7 @@ $(function () {
                         var id = $(this).parent().find(".oid").html();
                         var gid = $(this).parent().find(".ogid").html();
                         var prevpri=$(this).prev().html();
-                        $.get("http://47.104.244.134:8080/cartupdate.do", { "id": id, "gid": gid, "num": 0, "token": getCookie("token") },
+                        $.get("http://47.104.244.134:8080/cartupdate.do", { "id": id, "gid": gid, "num": 0, "token": parseInt(getCookie("token")) },
                             function (data) {
                                 if (data["msg"] != "失败") {
                                     var c = Number($(".cart-num").html()) - js;
@@ -102,7 +102,7 @@ $(function () {
                                     $(".cart_check_info i").html(ch);
                                     var jg=Number($(".cart_check_info .c_total").html()-prevpri);
                                     $(".cart_check_info .c_total").html(jg);
-                                    $.get("http://47.104.244.134:8080/cartlist.do", { "token": getCookie("token") },
+                                    $.get("http://47.104.244.134:8080/cartlist.do", { "token": parseInt(getCookie("token")) },
                                         function (data) {
                                             var all=0;
                                             for(var i in data){
