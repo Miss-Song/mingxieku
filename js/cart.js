@@ -1,6 +1,6 @@
 $(function () {
     window.onload = function () {
-        $.get("http://47.104.244.134:8080/cartlist.do", { "token": parseInt(getCookie("token"))},
+        $.get("http://47.104.244.134:8080/cartlist.do", { "token":getCookie("token")},
             function (data) {
                 var countaall = 0;
                 var allpric=0;
@@ -102,7 +102,7 @@ $(function () {
                                     $(".cart_check_info i").html(ch);
                                     var jg=Number($(".cart_check_info .c_total").html()-prevpri);
                                     $(".cart_check_info .c_total").html(jg);
-                                    $.get("http://47.104.244.134:8080/cartlist.do", { "token": parseInt(getCookie("token")) },
+                                    $.get("http://47.104.244.134:8080/cartlist.do", { "token": getCookie("token") },
                                         function (data) {
                                             var all=0;
                                             for(var i in data){
