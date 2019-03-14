@@ -1,6 +1,6 @@
 $(function () {
     window.onload = function () {
-        $.get("http://47.104.244.134:8080/cartlist.do", { "token": parseInt(getCookie("token")) },
+        $.get("http://47.104.244.134:8080/cartlist.do", { "token": parseInt(getCookie("token"))},
             function (data) {
                 var countaall = 0;
                 var allpric=0;
